@@ -10,7 +10,7 @@ function sha512(str) {
 }
 
 generate_button.onclick = async () => {
-  hash_result_text.innerText = (await sha512(url_input.textContent)).toString();
+  hash_result_text.innerText = (await sha512(url_input.value)).toString();
   hash_result_title.style.visibility='visible';
 }
 
