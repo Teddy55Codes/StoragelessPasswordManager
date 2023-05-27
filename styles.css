@@ -1,7 +1,7 @@
-label {
-    display:block
+label, input {
+  display: block
 }
 
-#hash_result_title {
-    visibility: hidden;
+#credentials_form_username, #credentials_form_url, #generate_hash, #hash_result_title, #input_credentials_div {
+  display: none;
 }
