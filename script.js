@@ -1,7 +1,5 @@
 const generate_hash = document.getElementById("generate_hash");
 const url_input = document.getElementById("url_input");
-const username_input = document.getElementById("username_input")
-const hash_result_title = document.getElementById("hash_result_title");
 const hash_algorithm_selection = document.getElementById("hash_algorithm_selection");
 const credential_type_username_url = document.getElementById("credential_type_username_url");
 const credential_type_url = document.getElementById("credential_type_url");
@@ -34,6 +32,7 @@ credential_type_url.onclick = () => {
 
 generate_hash.onclick = async () => {
     if (credential_type_username_url.checked) {
+        let username_input = document.getElementById("username_input")
         innerText = (await hasher(username_input.value + "@" + url_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
 
     } else if (credential_type_url.checked) {
@@ -41,7 +40,7 @@ generate_hash.onclick = async () => {
     } else {
         return;
     }
-    hash_result_title.style.display = display_for_initially_hidden_elements;
-
+    document.getElementById("hash_result_title").style.display = display_for_initially_hidden_elements;
+    document.getElementById("hash_result").style.display = display_for_initially_hidden_elements;
 }
 

@@ -2,8 +2,18 @@
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
+html {
+  background: #111;
+  color: #ddd;
+  margin: 2%;
+}
+
 label, input {
   display: block
+}
+
+.card {
+
 }
 
 #credentials_form_username, #credentials_form_url, #generate_hash, #hash_result_title, #input_credentials_div {
