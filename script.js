@@ -31,16 +31,18 @@ credential_type_url.onclick = () => {
 }
 
 generate_hash.onclick = async () => {
+    let hash_result = document.getElementById("hash_result")
+
     if (credential_type_username_url.checked) {
         let username_input = document.getElementById("username_input")
-        innerText = (await hasher(username_input.value + "@" + url_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
+        hash_result.innerHTML = (await hasher(username_input.value + "@" + url_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
 
     } else if (credential_type_url.checked) {
-        innerText = (await hasher(url_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
+        hash_result.innerHTML = (await hasher(url_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
     } else {
         return;
     }
     document.getElementById("hash_result_title").style.display = display_for_initially_hidden_elements;
-    document.getElementById("hash_result").style.display = display_for_initially_hidden_elements;
+    hash_result.style.display = display_for_initially_hidden_elements;
 }
 
