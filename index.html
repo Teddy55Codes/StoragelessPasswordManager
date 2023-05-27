@@ -12,14 +12,14 @@
   <main>
     <h1>SPM - Storageless Password Manager</h1>
     <div id="credential_card" class="card">
-      <h2>credential type</h2>
+      <h2>Credential Type</h2>
       <label>Username/Email & URL</label>
       <input id="credential_type_username_url" class="credential_type_radio" type="radio" name="credential_type_radio"/>
       <label>URL Only</label>
       <input id="credential_type_url" class="credential_type_radio" type="radio" name="credential_type_radio"/>
     </div>
     <div id="hash_card" class="card">
-      <h2>Hash algorithm</h2>
+      <h2>Hash Algorithm</h2>
       <select id="hash_algorithm_selection">
         <option value="SHA-512">SHA-512</option>
         <option value="SHA-384">SHA-384</option>
@@ -27,14 +27,14 @@
       </select>
     </div>
     <div id="generation_card" class="card">
-      <h2>input your credentials</h2>
+      <h2>Input Your Credentials</h2>
       <form onsubmit="return false">
         <div id="credentials_form_username">
-          <label>input url</label>
+          <label>Username/Email</label>
           <input id="username_input"/>
         </div>
         <div id="credentials_form_url">
-          <label>input url</label>
+          <label>URL</label>
           <input id="url_input"/>
         </div>
         <button id="generate_hash" type="submit">Generate</button>
