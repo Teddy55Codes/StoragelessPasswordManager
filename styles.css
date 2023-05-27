@@ -1,3 +1,7 @@
+* {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
 label, input {
   display: block
 }
