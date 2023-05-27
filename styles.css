@@ -1,3 +1,7 @@
+label {
+    display:block
+}
+
 #hash_result_title {
     visibility: hidden;
 }

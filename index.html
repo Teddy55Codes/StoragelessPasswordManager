@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>SPM - Storageless Password Manager</title>
@@ -9,6 +9,18 @@
       <link rel="stylesheet" href="styles.css">
     </header>
     <main>
+      <h1>SPM - Storageless Password Manager</h1>
+      <h2>credential type</h2>
+      <label>Username/Email & Password</label>
+      <input type="radio" name="credential_type_radio"/>
+      <label>Password Only</label>
+      <input type="radio" name="credential_type_radio">
+      <h2>Hash algorithm</h2>
+      <select id="hash_algorithm_selection">
+        <option value="sha512">SHA-512</option>
+        <option value="sha256">SHA-256</option>
+      </select>
+      <h2>input your credentials</h2>
       <form onsubmit="return false">
         <label>input url</label>
         <input id="url_input"/>
@@ -16,8 +28,7 @@
       </form>
       <p id="hash_result_title">your password:</p>
       <p id="hash_result"></p>
-      <script src="script.js"></script>
     </main>
-    <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>
