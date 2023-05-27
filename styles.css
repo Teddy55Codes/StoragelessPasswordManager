@@ -5,17 +5,30 @@
 html {
   background: #111;
   color: #ddd;
-  margin: 2%;
+  padding: 2%;
 }
 
 label, input {
   display: block
 }
 
-.card {
-
+label {
+  margin: 5px 0 10px 0;
 }
 
-#credentials_form_username, #credentials_form_url, #generate_hash, #hash_result_title, #input_credentials_div {
+button {
+  margin: 10px 0 10px 0;
+}
+
+.card {
+  padding: 10px;
+  border-bottom: 2px solid #048cf4;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+#credentials_form_username, #credentials_form_url, #generate_hash, #hash_result_title, #input_credentials_div, #hash_result {
   display: none;
 }
