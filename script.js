@@ -42,7 +42,7 @@ generate_hash.onclick = async () => {
     } else {
         return;
     }
-    document.getElementById("hash_result_title").style.display = display_for_initially_hidden_elements;
+    document.getElementById("hash_result_title").style.display = "block";
     hash_result.style.display = display_for_initially_hidden_elements;
 }
 
