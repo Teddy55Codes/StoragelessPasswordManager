@@ -17,7 +17,7 @@ label, input {
 }
 
 label {
-  margin: 5px 0 10px 0;
+  margin: 10px 0 5px 0;
 }
 
 button {
@@ -33,6 +33,6 @@ button {
   margin-top: 0;
 }
 
-#credentials_form_username, #credentials_form_url, #generate_hash, #hash_result_title, #input_credentials_div, #hash_result, #credentials_form_salt {
+.start_invisible {
   display: none;
 }

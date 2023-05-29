@@ -5,6 +5,8 @@ const credential_type_url = document.getElementById("credential_type_url");
 const credentials_form_username = document.getElementById("credentials_form_username");
 const credentials_form_url = document.getElementById("credentials_form_url");
 const credentials_form_salt = document.getElementById("credentials_form_salt");
+const credentials_form_special_chars = document.getElementById("credentials_form_special_chars");
+const enable_special_chars = document.getElementById("enable_special_chars");
 
 const salt_start_text = ":START_SALT:";
 const display_for_initially_hidden_elements = "inline";
@@ -22,14 +24,16 @@ function hasher(str, hash_function) {
 credential_type_username_url.onclick = () => {
     credentials_form_username.style.display = display_for_initially_hidden_elements;
     credentials_form_url.style.display = display_for_initially_hidden_elements;
-    credentials_form_salt.style.display = display_for_initially_hidden_elements
+    credentials_form_salt.style.display = display_for_initially_hidden_elements;
+    credentials_form_special_chars.style.display = display_for_initially_hidden_elements;
     generate_hash.style.display = display_for_initially_hidden_elements;
 }
 
 credential_type_url.onclick = () => {
     credentials_form_username.style.display = "none";
-    credentials_form_salt.style.display = display_for_initially_hidden_elements
+    credentials_form_salt.style.display = display_for_initially_hidden_elements;
     credentials_form_url.style.display = display_for_initially_hidden_elements;
+    credentials_form_special_chars.style.display = display_for_initially_hidden_elements;
     generate_hash.style.display = display_for_initially_hidden_elements;
 }
 
@@ -38,12 +42,20 @@ generate_hash.onclick = async () => {
     let url_input = document.getElementById("url_input");
     let salt_input = document.getElementById("salt_input");
 
+    let special_chars = enable_special_chars.checked ? "!#*" : "";
+
     if (credential_type_username_url.checked) {
         let username_input = document.getElementById("username_input")
-        hash_result.innerHTML = (await hasher(username_input.value + "@" + url_input.value + salt_start_text + salt_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
+        let generated_password = (await hasher(
+            username_input.value + "@" + url_input.value + salt_start_text + salt_input.value,
+            hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
+        hash_result.innerHTML = generated_password + special_chars;
 
     } else if (credential_type_url.checked) {
-        hash_result.innerHTML = (await hasher(url_input.value + salt_start_text + salt_input.value, hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
+        let generated_password = (await hasher(
+            url_input.value + salt_start_text + salt_input.value,
+            hash_algorithm_selection.options[hash_algorithm_selection.selectedIndex].value)).toString();
+        hash_result.innerHTML = generated_password + special_chars;
     } else {
         return;
     }

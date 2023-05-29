@@ -29,22 +29,26 @@
     <div id="generation_card" class="card">
       <h2>Input Your Credentials</h2>
       <form onsubmit="return false">
-        <div id="credentials_form_username">
+        <div id="credentials_form_username" class="start_invisible">
           <label>Username/Email</label>
           <input id="username_input"/>
         </div>
-        <div id="credentials_form_url">
+        <div id="credentials_form_url" class="start_invisible">
           <label>URL</label>
           <input id="url_input"/>
         </div>
-        <div id="credentials_form_salt">
+        <div id="credentials_form_salt" class="start_invisible">
           <label>Salt</label>
           <input id="salt_input"/>
         </div>
-        <button id="generate_hash" type="submit">Generate</button>
+        <div id="credentials_form_special_chars" class="start_invisible">
+          <label>Add Special Characters</label>
+          <input id="enable_special_chars"  type="checkbox"/>
+        </div>
+        <button id="generate_hash" class="start_invisible" type="submit">Generate</button>
       </form>
-      <p id="hash_result_title">Your Password:</p>
-      <p id="hash_result"></p>
+      <p id="hash_result_title" class="start_invisible">Your Password:</p>
+      <p id="hash_result" class="start_invisible"></p>
     </div>
   </main>
   <script src="script.js"></script>
