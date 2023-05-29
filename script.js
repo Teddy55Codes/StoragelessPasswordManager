@@ -26,10 +26,7 @@ function limitString(str, maxLength) {
 }
 
 function makeFormVisible() {
-    document.getElementById("credentials_form_url").style.display = display_for_initially_hidden_elements;
-    document.getElementById("credentials_form_salt").style.display = display_for_initially_hidden_elements;
-    document.getElementById("credentials_form_special_chars").style.display = display_for_initially_hidden_elements;
-    document.getElementById("credentials_form_max_length").style.display = display_for_initially_hidden_elements;
+    document.getElementById("generation_card").style.display = "block"
     generate_hash.style.display = display_for_initially_hidden_elements;
 }
 

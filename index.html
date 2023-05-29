@@ -26,30 +26,30 @@
         <option value="SHA-256">SHA-256</option>
       </select>
     </div>
-    <div id="generation_card" class="card">
+    <div id="generation_card" class="card start_invisible" >
       <h2>Input Your Credentials</h2>
       <form onsubmit="return false">
         <div id="credentials_form_username" class="start_invisible">
           <label>Username/Email</label>
           <input id="username_input"/>
         </div>
-        <div id="credentials_form_url" class="start_invisible">
+        <div id="credentials_form_url">
           <label>URL</label>
           <input id="url_input"/>
         </div>
-        <div id="credentials_form_salt" class="start_invisible">
+        <div id="credentials_form_salt">
           <label>Salt</label>
           <input id="salt_input"/>
         </div>
-        <div id="credentials_form_special_chars" class="start_invisible">
+        <div id="credentials_form_special_chars">
           <label>Add Special Characters And Capital Letters</label>
           <input id="enable_special_chars"  type="checkbox"/>
         </div>
-        <div id="credentials_form_max_length" class="start_invisible">
+        <div id="credentials_form_max_length">
           <label>Max Password Length</label>
           <input id="max_password_length"  type="number"/>
         </div>
-        <button id="generate_hash" class="start_invisible" type="submit">Generate</button>
+        <button id="generate_hash" type="submit">Generate</button>
       </form>
       <p id="hash_result_title" class="start_invisible">Your Password:</p>
       <p id="hash_result" class="start_invisible"></p>
