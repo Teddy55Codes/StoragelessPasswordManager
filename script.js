@@ -45,7 +45,7 @@ generate_hash.onclick = async () => {
     let url_input = document.getElementById("url_input");
     let salt_input = document.getElementById("salt_input");
 
-    let special_chars = enable_special_chars.checked ? "!#*" : "";
+    let special_chars = enable_special_chars.checked ? "ABC!#*" : "";
     let max_length = document.getElementById("max_password_length").value;
 
     if (credential_type_username_url.checked) {
